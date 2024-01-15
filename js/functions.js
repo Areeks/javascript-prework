@@ -1,13 +1,13 @@
 let playerWin = 0;
 let computerWin = 0;
 
-function printMessage(msg){
+const printMessage = function(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function printScore() {
+const printScore = function() {
     let resultDiv = document.getElementById('result');
 
     // Sprawdź, czy div już istnieje
@@ -22,11 +22,11 @@ function printScore() {
     }
 }
 
-function clearMessages(){
+const clearMessages = function(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-function getMoveName(argMoveId)
+const getMoveName = function(argMoveId)
 {
     if(argMoveId == 1)
         return 'kamień';
@@ -39,7 +39,7 @@ function getMoveName(argMoveId)
     return 'nieznany ruch';
 }
 
-function displayResult(argComputerMove, argPlayerMove){
+const displayResult = function(argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   
     if(argComputerMove == 'kamień' && argPlayerMove == 'papier')
@@ -69,7 +69,7 @@ function displayResult(argComputerMove, argPlayerMove){
     printScore();
 }
 
-function randomMove()
+const randomMove = function()
 {
     return Math.floor(Math.random()* 3 + 1);
 }
